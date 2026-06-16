@@ -2,12 +2,17 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { loginUser } from "../../utils/api"
 import { toast } from "react-toastify"
+import { useDispatch } from "react-redux"
+import { login } from "../../global/reduxSlice"
 
 
 
 const Login = () => {
 
   const navigate = useNavigate()
+
+  const dispatch = useDispatch ()
+
    // const dispatch = useDispatch()
 
    const [email, setEmail] = useState("")
@@ -24,6 +29,19 @@ const Login = () => {
       const data = await loginUser(
         email,password
       );
+
+      dispatch(
+        login({
+          user: data.user,
+          accessToken: data.accessToken,
+        })
+      )
+
+      console.log("Dispatch data:",{
+        user: data.user,
+        accessToken: data.accessToken
+      }
+      )
 
       // dispatch(
             //     login({
@@ -55,10 +73,10 @@ const Login = () => {
   
   return (
     <div className=" bg-amber-400 border-t flex justify-center  w-full h-screen text-white  ">
-      <div className=" justify-center w-[90] items-center p-10">
-        <div className=" grid gap-10  justify-center items-center w-full">
-          <div className="w-[90%] justify-center items-center grid gap-5 bg-blue-500 h-110 shadow-2xl rounded-2xl ">
-            <div>
+      <div className="  flex justify-center w-[90] items-center p-10">
+        <div className=" grid gap-10  justify-center items-center w-[70%]">
+          <div className="w-[90%] justify-center items-center grid gap-5 bg-blue-500 bg-cover bg-center h-110 shadow-2xl rounded-2xl ">
+            <div >
               <h6 className="text-[32px] font-bold font-sans">Enter your info to sign in</h6>
               <span className=" text-[18px] text-[#ffffffb3] font-sans font-normal">Or get started with a new account.</span>
             </div>

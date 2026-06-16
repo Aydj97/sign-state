@@ -3,6 +3,7 @@ import SigninLayout from "../layout/SigninLayout";
 import Login from "../pages/home/Login";
 import DashboradLayout from "../layout/DashboradLayout";
 import Dashborad from "../pages/dashborad/Dashboard";
+import ProtectedRoute from "./ProtectedRoute";
 
 export const element = createBrowserRouter([
     {  path: "/",
@@ -17,7 +18,12 @@ export const element = createBrowserRouter([
 },
 
 {  path: "/dashboard",
-    element: < DashboradLayout/>,
+    // element: < DashboradLayout/>,
+    element: (
+      <ProtectedRoute>
+        <DashboradLayout/>
+      </ProtectedRoute>
+    ),
     children: [
       {
         index: true,
