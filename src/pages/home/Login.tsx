@@ -59,11 +59,11 @@ const Login = () => {
   };
 
   return (
-    <div className=" bg-amber-400 border-t flex justify-center  w-full h-screen text-white  ">
-      <div className="  flex justify-center w-[90] items-center p-10">
+    <div className=" bg-black border-t flex justify-center  w-full h-screen text-white  ">
+      <div className="  flex justify-center w-[99%] items-center p-10">
         <div className=" grid gap-10  justify-center items-center w-[70%]">
-          <div className="w-[90%] justify-center items-center grid gap-5 bg-blue-500 bg-cover bg-center h-110 shadow-2xl rounded-2xl ">
-            <div>
+          <div className=" justify-center items-center grid gap-5 bg-blue-500 bg-cover bg-center h-110 shadow-2xl rounded-2xl ">
+            <div className=" ">
               <h6 className="text-[32px] font-bold font-sans">
                 Enter your info to sign in
               </h6>
@@ -74,7 +74,7 @@ const Login = () => {
 
             <form
               onSubmit={handlesubmit}
-              className="w-[80%] md:w-[50%] lg:w-[30%] shadow-2xl runded-[15px] p-6 pt-10"
+              className="w-[80%] md:w-[50%] lg:w-full shadow-2xl runded-[15px] p-6 pt-10"
             >
               <div className=" flex flex-col justify-center items-center">
                 <div className="w-[89%]  gap-3 grid   justify-center items-center ">

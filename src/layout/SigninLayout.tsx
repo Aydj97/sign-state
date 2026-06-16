@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom"
-import { Footer, Header } from "../componet"
+import { Footer,  } from "../componet"
 
 const SigninLayout = () => {
   return (
     <div>
-        <Header/>
+        {/* <Header/> */}
         <Outlet/>
         <Footer/>
     </div>
