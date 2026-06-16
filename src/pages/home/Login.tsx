@@ -117,7 +117,13 @@ const Login = () => {
                     className=" flex gap-4 w-70 md:w-105 lg:w-105 h-13  bg-[#312705] justify-center items-center text-[#ffffff] font-bold font-sans lg:text-[17px] p-2 lg:p-0  rounded-sm"
                     disabled={loading}
                     >
-                      Sign In
+                      Sign In 
+
+                       {
+                      loading ? "Logging in" : "Login"
+                    }
+
+                      
                     </button>
                     {
                       loading ? "Logging in" : "Login"
